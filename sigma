@@ -1,0 +1,28 @@
+local frame = script.Parent -- Reference to the Frame
+local playButton = frame:WaitForChild("PlayButton") -- Ensure you have a TextButton named "PlayButton"
+local settingsButton = frame:WaitForChild("SettingsButton") -- Ensure you have a TextButton named "SettingsButton"
+local quitButton = frame:WaitForChild("QuitButton") -- Ensure you have a TextButton named "QuitButton"
+
+-- Function to handle Play button click
+local function onPlayButtonClick()
+    print("Play Button Clicked") -- You can replace this with your game start logic
+    frame.Visible = false -- Hide the menu
+end
+
+-- Function to handle Settings button click
+local function onSettingsButtonClick()
+    print("Settings Button Clicked") -- You can replace this with your settings logic
+end
+
+-- Function to handle Quit button click
+local function onQuitButtonClick()
+    print("Quit Button Clicked") -- You can replace this with your quit logic
+end
+
+-- Connect button clicks to their respective functions
+playButton.MouseButton1Click:Connect(onPlayButtonClick)
+settingsButton.MouseButton1Click:Connect(onSettingsButtonClick)
+quitButton.MouseButton1Click:Connect(onQuitButtonClick)
+
+-- Optionally, show the menu when the game starts
+frame.Visible = true
